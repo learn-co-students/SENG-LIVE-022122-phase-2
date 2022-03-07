@@ -34,9 +34,9 @@ To do this there are a two main tasks we'll want to complete.
   - In my case I'm creating the folder through the terminal using the `mkdir lecture-code` command
   - next, `cd lecture-code` to move my terminal's working directory into the `lecture-code` folder
 - run `git clone <pasteyoursshgitrepolinkhere>` in the terminal
-- run `code SENG-LIVE-011022-phase-1` to open the repository within VSCode
+- run `code SENG-LIVE-022122-phase-1` to open the repository within VSCode
 
-> **PRO TIP** If you type the `tab` key on your keyboard while interacting with the terminal, you can autocomplete long file or folder names. In this case, I typed `code SENG` and then hit the `tab` key and it expanded the path to the only folder name matching `SENG` which was `SENG-LIVE-011022-phase-1`. So, you only need to type as many characters as can uniquely identify the file or folder name that you want to open and then you can use `tab` to complete the rest of the required typing without typos!
+> **PRO TIP** If you type the `tab` key on your keyboard while interacting with the terminal, you can autocomplete long file or folder names. In this case, I typed `code SENG` and then hit the `tab` key and it expanded the path to the only folder name matching `SENG` which was `SENG-LIVE-022122-phase-1`. So, you only need to type as many characters as can uniquely identify the file or folder name that you want to open and then you can use `tab` to complete the rest of the required typing without typos!
 
 ![Cloning to your machine](assets/cloning-to-your-machine.gif)
 
