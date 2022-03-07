@@ -1,5 +1,9 @@
 # Intro to React
 
+## What we are building:
+
+<need to enter final project showcase image here>
+
 ## Objectives
 
 - Introduce React and its philosophy
@@ -9,6 +13,10 @@
 - Explain what JSX is and the difference between JSX and HTML
 
 ## Deliverables
+
+- Create a React project using `npx create-react-app my-app`
+
+- Create `App` component and render to the DOM
 
 ## Resources
 
