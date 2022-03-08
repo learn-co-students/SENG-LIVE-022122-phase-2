@@ -1,5 +1,11 @@
 # Components & Props
 
+### Component Hierarchy
+
+<p align="center">
+    <img src="../assets/component-hierarchy.png" width="500" height="350">
+</p>
+
 ### Objectives
 
 - Identify components from a wireframe
