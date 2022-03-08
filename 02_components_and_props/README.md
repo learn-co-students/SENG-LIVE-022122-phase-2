@@ -1,11 +1,5 @@
 # Components & Props
 
-### Component Hierarchy
-
-<p align="center">
-    <img src="../assets/component-hierarchy.png" width="500" height="350">
-</p>
-
 ### Objectives
 
 - Identify components from a wireframe
@@ -57,7 +51,7 @@
 
 - Dynamically render each project name inside the `h4` tag
 
-- Dynamically render each project's about data inside the `p` tag 
+- Dynamically render each project's about data inside the `p` tag
 
 ### Resources
 
