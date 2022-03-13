@@ -3,7 +3,7 @@
 ## What we are building:
 
 <p align="center">
-    <img src="../assets/projectshowcasefinal.png" width="350" height="250">
+    <img src="../assets/projectshowcasefinal.png" width="750" height="650">
 </p>
 
 ## Objectives
