@@ -2,15 +2,17 @@
 
 ## What we are building:
 
-<need to enter final project showcase image here>
+<p align="center">
+    <img src="../assets/projectshowcasefinal.png" width="950" height="550">
+</p>
 
 ## Objectives
 
 - Introduce React and its philosophy
-- Explain the difference between declarative and imperative programming
+- Discuss the difference between declarative and imperative programming
 - Explain the benefits of components and writing modular code
-- Explain the ReactDOM.render() method including what arguments it takes and why it’s important
-- Explain what JSX is and the difference between JSX and HTML
+- Explore the ReactDOM.render() method including what arguments it takes and why it’s important
+- Define what JSX is and review the difference between JSX and HTML
 
 ## Deliverables
 
