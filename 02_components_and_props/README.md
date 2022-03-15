@@ -13,6 +13,9 @@
 
 ### Deliverables
 
+▶️ If you have not created the React app yet, run the following command: `npx create-react-app project_showcase` ❗
+▶️ Once the project creation has completed, from the directory `02_components_and_props`, `cd` into the directory `project_showcase`
+
 #### 1. Create an `App` component that will:
 
 - Mount a `Header`, `ProjectForm` and `ProjectList` component
@@ -61,7 +64,6 @@
 - [create-react-app](https://create-react-app.dev/docs/getting-started)
 - [Webpack](https://webpack.js.org/)
 - [Quick intro to Webpack](https://medium.com/the-self-taught-programmer/what-is-webpack-and-why-should-i-care-part-1-introduction-ca4da7d0d8dc)
-
 
 ### VSCode extensions
 
