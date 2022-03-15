@@ -72,3 +72,11 @@
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 - [Tabnine](https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode)
 - [ES7+ React/Redux/React-Native/JS snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
+
+
+
+Components:
+ProjectForm
+ProjectCard
+ProjectList
+Header

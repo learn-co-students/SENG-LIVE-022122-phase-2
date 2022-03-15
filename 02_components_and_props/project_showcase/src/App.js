@@ -1,24 +1,17 @@
+import Header from "./components/Header";
+import ProjectForm from "./components/ProjectForm";
+import ProjectList from "./components/ProjectList";
+
+import projects from "./projects";
+
 function App() {
   return (
     <div className="App">
-      <Header text="Home" subtitle="test" />
-      <Header text="About" subtitle="testing" />
-      This is our app!
+      <Header />
+      <ProjectForm projects={projects}/>
+      <ProjectList projects={projects}/>
     </div>
   );
 }
-
-// header UI
-// prop: the data that the component is going to receive and use within itself
-
-const Header = (props) => {
-  console.log(props);
-  return (
-    <>
-      <h1>{props.text}</h1>
-      <h2>{props.subtitle}</h2>
-    </>
-  );
-};
 
 export default App;
