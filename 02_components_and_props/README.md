@@ -61,3 +61,12 @@
 - [create-react-app](https://create-react-app.dev/docs/getting-started)
 - [Webpack](https://webpack.js.org/)
 - [Quick intro to Webpack](https://medium.com/the-self-taught-programmer/what-is-webpack-and-why-should-i-care-part-1-introduction-ca4da7d0d8dc)
+
+
+### VSCode extensions
+
+- [draw.io integration](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio)
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [Tabnine](https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode)
+- [ES7+ React/Redux/React-Native/JS snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
