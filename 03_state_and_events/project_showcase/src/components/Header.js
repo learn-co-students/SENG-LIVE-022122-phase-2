@@ -1,4 +1,4 @@
-function Header({ title, logo }) {
+function Header() {
   return (
     <header>
       <h1>
