@@ -1,4 +1,4 @@
-function ProjectForm() {
+function ProjectForm({projects}) {
   return (
     <section>
     <form className="form">
