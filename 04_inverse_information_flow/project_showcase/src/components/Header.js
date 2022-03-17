@@ -1,21 +1,16 @@
-import React, {useState} from 'react';
 
-function Header() {
-  //[stateVar, setterFun]
-const [isDark, setIsDark] = useState(true)
+function Header({isDark, onToggleDarkMode, handleProjectTitle}) {
 
-  const handleClick = () => {
-    setIsDark(isDark => !isDark)
-  }
   return (
     <header>
       <h1>
       <span className="logo">{"//"}</span>
-        Project Showcase
+          {`Project Showcase`}
       </h1>
-      <button onClick={handleClick}>
+      <button onClick={onToggleDarkMode}>
         {isDark? 'Dark' : 'Light'} Mode
       </button>
+      <input onChange={handleProjectTitle}/>
     </header>
   );
 }

@@ -1,4 +1,4 @@
-function ProjectForm({projects}) {
+function ProjectForm({onSubmit}) {
   return (
     <section>
     <form className="form">

@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import ProjectListItem from "./ProjectListItem";
 
-function ProjectList({ projects }) {
+function ProjectList({ projects, projectTitle }) {
   const [searchText, setSearchText] = useState("")
 
   const searchResults = projects.filter(project => {
@@ -18,8 +18,7 @@ function ProjectList({ projects }) {
  
   return (
     <section>
-    <h2>Projects</h2>
-
+    <h2>{projectTitle}</h2>
     <div className="filter">
       <button>All</button>
       <button>Phase 5</button>
