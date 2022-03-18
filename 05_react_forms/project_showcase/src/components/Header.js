@@ -1,5 +1,5 @@
 
-function Header({isDark, onToggleDarkMode, handleProjectTitle}) {
+function Header({isDark, onToggleDarkMode}) {
 
   return (
     <header>
@@ -10,7 +10,7 @@ function Header({isDark, onToggleDarkMode, handleProjectTitle}) {
       <button onClick={onToggleDarkMode}>
         {isDark? 'Dark' : 'Light'} Mode
       </button>
-      <input onChange={handleProjectTitle}/>
+
     </header>
   );
 }
