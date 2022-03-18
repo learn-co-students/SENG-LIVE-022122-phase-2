@@ -29,7 +29,6 @@ function ProjectForm() {
       </form>
     </section>
   
-   </section>
     );
   
 }
