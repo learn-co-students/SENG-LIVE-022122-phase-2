@@ -23,11 +23,11 @@ function App() {
 
 
   return (
-    <div className={isDarkMode ? 'App' : 'App light'}>
-      <Header handleProjectTitle={handleProjectTitle} onToggleDarkMode={toggleDarkMode} isDark={isDark}/>
+    <div className={isDark ? 'App' : 'App light'}>
+      <Header onToggleDarkMode={toggleDarkMode} isDark={isDark}/>
       <ProjectForm />
       <button onClick={fetchProjects} >Fetch Projects</button>
-      <ProjectList projectTitle={projectTitle} projects={projects}/>
+      <ProjectList projects={projects}/>
     </div>
   );
 }
