@@ -24,17 +24,14 @@ function App() {
     setIsDark(isDark => !isDark)
   }
 
-  const handleProjectTitle = (e) => {
-    setProjectTitle(e.target.value)
-  }
-
+ 
   
 
   return (
     <div className={isDark?"App": "App light"}>
-      <Header handleProjectTitle={handleProjectTitle} onToggleDarkMode={toggleDarkMode} isDark={isDark}/>
+      <Header onToggleDarkMode={toggleDarkMode} isDark={isDark}/>
       <ProjectForm />
-      <button onClick={fetchProjects} >Fetch Projects</button>
+      <button  >Fetch Projects</button>
       <ProjectList projectTitle={projectTitle} projects={projects}/>
     </div>
   );
