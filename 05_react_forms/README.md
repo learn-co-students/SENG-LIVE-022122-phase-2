@@ -250,27 +250,3 @@ function updateComment(updatedComment) {
 ```
 
 If you only want to update one attribute instead of replacing the whole object:
-
-```js
-// updating one object in an array
-function updateCustomer(id, name) {
-  // use map to return a new array so we aren't mutating state
-  const updatedCustomers = customers.map((customer) => {
-    // in the array, look for the object we want to update
-    if (customer.id === id) {
-      // if we find the object
-      // make a copy of it and update whatever attribute have changed
-      return {
-        ...customer,
-        name: name,
-      };
-    } else {
-      // for all other objects in the array
-      return customer; // return the original object
-    }
-  });
-
-  // set state with our updated array
-  setCustomers(updatedCustomers);
-}
-```
