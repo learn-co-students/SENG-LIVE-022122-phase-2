@@ -12,7 +12,7 @@ function ProjectList(props) {
   })
  
   const projectItems = searchResults.map((project) => {
-    return <ProjectListItem key={project.id} {...project} />;
+    return <ProjectListItem key={project.id} project={project} />;
   });
 
   const handleSearch = ({target}) => {
