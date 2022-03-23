@@ -1,4 +1,6 @@
 function NavBar({ isLoggedIn }) {
+    console.log(`isLoggedIn: ${isLoggedIn}`)
+    
     // RENDERING WITH TERNARY OPERATOR
     return (
         <nav className="nav">

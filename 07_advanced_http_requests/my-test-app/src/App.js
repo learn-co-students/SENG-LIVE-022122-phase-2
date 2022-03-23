@@ -31,12 +31,19 @@ import CardForm from './components/CardForm';
 function App() {
   // Set "cards" state + setter function
   const [ cards, setCards ] = useState([]);
+  const [ isLoggedIn, setLoggedIn ] = useState(false);
 
   // 🚧 Add states to manage POST (addCard), PATCH (removeCard), and DELETE (editCard)
   // ❗ Why is setting state necessary?
-  // ...
-  // ...
-  // ...
+  // const [ addCard, setAddCard ] = useState(false);
+  // const [ removeCard, setRemoveCard ] = useState(false);
+  // const [ editCard, setEditCard ] = useState(false);
+
+  // Combining All States Into One
+  const [ issueRequest, setIssueRequest ] = useState(false);
+
+  // !addCard => false
+  // !addCard => true
 
   // Use fetch to retrieve Cards from db.json and
   // set as our initial value for "cards"
@@ -53,78 +60,86 @@ function App() {
     console.log("Fetching data...");
 
     // Invoke "loadCards" via useEffect 
-    loadCards(); 
+    loadCards();
 
-  // ❗ What states will we need to add to our dependencies array and why?
-  }, []);
+    // Add
+    // Other
+    // Behaviors
 
-  function handleAddCard(newCard) {
+  // ❗ What states can we add to our dependencies array and why?
+  }, [issueRequest]);
+
+  function onHandleAddCard(newCard) {
+
+    const newCardsArray = [...cards, newCard]
 
     // 🚧 Refactor handleAddCard() to handle POST
 
-    // fetch("http://localhost:3001/cards", {
-    //   method: "❓",
-    //   headers: {
-    //     "Content-Type": "application/json"
-    //   },
-    //   body: JSON.stringify(❓)
-    // }).then(
-    //      ❗ Remember to invoke loadCards() and toggle "addCard" state after successful fetch   
-    // })
-
-    // Avoid direct state mutation by using the Spread Operator
-    const newCardsArray = [...cards, newCard]
-
-    // Pass new array to "setState."
-    setCards(newCardsArray)
+    fetch("http://localhost:3001/cards", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newCard)
+    }).then(
+      // Pass new array to "setState."
+      setCards(newCardsArray)
+    );
   }
 
   // 🚧 Add function to handle DELETE (handleRemoveCard)
   // ❗ Remember to invoke loadCards() and toggle "removeCard" state after successful fetch
 
-  // function handleRemoveCard(card) {
-  //    fetch(`http://localhost:3001/cards/${❓}`, {
-  //      method: "❓",
-  //      headers: {
-  //        "Content-Type": "application/json"
-  //    }
-  //   }).then(
-  //     ❗ Remember to invoke loadCards() and toggle "addCard" state after successful fetch   
-  //   })
-  //  );
-  // }
+  function onHandleRemoveCard(card) {
+    fetch(`http://localhost:3001/cards/${card.id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json"
+        }
+    }).then(
+      // setRemoveCard(!removeCard)
+      
+      // Combining All States Into One
+      setIssueRequest(!issueRequest)
+    );
+  }
 
   // 🚧 Add function to handle PATCH (handleEditCard)
   // ❗ Remember to invoke loadCards() and toggle "editCard" state after successful fetch
 
-    // function handleEditCard(card) {
-    //   fetch(`http://localhost:3001/cards/${❓}`, {
-    //     method: "❓",
-    //     headers: {
-    //       "Content-Type": "application/json"
-    //     },
-    //     body: JSON.stringify({
-    //       liked: ❓
-    //     })
-    //   }).then(
-    //       ❗ Remember to invoke loadCards() and toggle "editCard" state after successful fetch   
-    //   })
-    //  );
-    // }
+    function onHandleEditCard(card) {
+      fetch(`http://localhost:3001/cards/${card.id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          liked: !card.liked
+        })
+      }).then(
+        // setEditCard(!editCard)
+
+        // Combining All States Into One
+        setIssueRequest(!issueRequest)
+      )
+    }
 
   return (
     <div className="App">
       {/* NavBar Component */}
-      <NavBar isLoggedIn/>
+      <NavBar 
+        isLoggedIn={isLoggedIn} 
+      />
 
       {/* Header Component */}
       <Header 
         firstName="Test" 
         lastName="User" 
       />
-
+      
+      {/* CardForm Component */}
       <CardForm 
-        handleAddCard={handleAddCard}
+        onHandleAddCard={onHandleAddCard}
         cards={cards}
       />
 
@@ -133,6 +148,8 @@ function App() {
         cards={cards}
 
         // 🚧 Pass handleRemoveCard() and handleEditCard as props
+        onHandleRemoveCard={onHandleRemoveCard}
+        onHandleEditCard={onHandleEditCard}
       />
     </div>
   );

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Button from './Button';
 
-function Card({ handleRemoveCard, handleEditCard, card, title, content="Add Some Content Here"}) {
+function Card({ onHandleRemoveCard, onHandleEditCard, card, title, content="Add Some Content Here"}) {
     // Create a State to handle Card info visibility
     const [ isVisible, setVisibility ] = useState(true);
 
@@ -44,11 +44,13 @@ function Card({ handleRemoveCard, handleEditCard, card, title, content="Add Some
                 name="like" 
                 card={card}
                 // 🚧 Pass handleEditCard as prop
+                onHandleEditCard={onHandleEditCard}
             />
             <Button 
                 name="trash" 
                 card={card}
                 // 🚧 Pass handleRemoveCard as prop
+                onHandleRemoveCard={onHandleRemoveCard}
             />
         </div>
     );

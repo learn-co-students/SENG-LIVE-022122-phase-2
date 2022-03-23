@@ -1,6 +1,8 @@
 import { useState } from 'react';
 
-function Button({ handleRemoveCard, handleEditCard, card, name, toggleVisibility }) {
+function Button({ onHandleRemoveCard, onHandleEditCard, card, name, toggleVisibility }) {
+
+
 
     // Create ONE state that will keep track of whether
     // a Button has been toggled, "isToggled"
@@ -27,15 +29,15 @@ function Button({ handleRemoveCard, handleEditCard, card, name, toggleVisibility
         return (
             // 🚧 Set handleEditCard() as onClick behavior
             // ❗ Remember to pass a function reference, not invocation
-            <button className="button" onClick={toggleButton}>
-                { isToggled ? '❤️' : '♡' }
+            <button className="button" onClick={() => onHandleEditCard(card)}>
+                { card.liked ? '❤️' : '♡' }
             </button>
         );
     } else {
         return (
             // 🚧 Set handleRemoveCard() as onClick behavior
             // ❗ Remember to pass a function reference, not invocation
-            <button className="button">
+            <button className="button" onClick={() => onHandleRemoveCard(card)}>
                 🗑️
             </button>
         );

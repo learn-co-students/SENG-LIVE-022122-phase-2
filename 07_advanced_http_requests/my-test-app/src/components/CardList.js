@@ -1,7 +1,7 @@
 // Will accept an array of Card objects as props
 import Card from './Card';
 
-function CardList({ cards, handleRemoveCard, handleEditCard }) {
+function CardList({ cards, onHandleRemoveCard, onHandleEditCard }) {
     // cards => props object
     // { cards } => props.cards
 
@@ -19,6 +19,8 @@ function CardList({ cards, handleRemoveCard, handleEditCard }) {
                         content={card.content} 
 
                         // 🚧 Pass handleRemoveCard() and handleEditCard as props
+                        onHandleRemoveCard={onHandleRemoveCard}
+                        onHandleEditCard={onHandleEditCard}
                     />
                 );
             })}

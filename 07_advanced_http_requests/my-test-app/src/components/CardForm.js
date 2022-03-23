@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function CardForm({ handleAddCard, cards }){
+function CardForm({ onHandleAddCard, cards }){
     // Create a state (formData) to manage all of our form data
     const [ formData, formDataSetter ] = useState({
         title: "",
@@ -36,13 +36,14 @@ function CardForm({ handleAddCard, cards }){
         const newCard = {
             id: newId,
             title: formData.title,
-            content: formData.content
+            content: formData.content,
+            liked: false
             // ...formData
         }
 
         // Use handleAddCard from props to add the newCard JS object
         // to the existing array of Card objects (cards)
-        handleAddCard(newCard); 
+        onHandleAddCard(newCard); 
 
         // Clear out input values upon form submission using formDataSetter
         formDataSetter({
