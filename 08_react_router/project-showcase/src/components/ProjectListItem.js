@@ -1,5 +1,6 @@
 import React from "react";
 import { FaPencilAlt, FaTrash } from 'react-icons/fa';
+import { Link } from "react-router-dom";
 
 
 function ProjectListItem({
@@ -13,19 +14,12 @@ function ProjectListItem({
   onDeleteProject,
   onUpdateProject
 }) {
-  // optionally we can destructure individual properties from project
-
-  function handleEditClick() {
-    
-  }
 
   function handleClapClick() {
     onUpdateProject(id, JSON.stringify({claps: claps + 1}))
   }
 
   function handleDeleteClick() {
-    console.log('delete me!')
-    
     onDeleteProject(id);
   }
   return (
@@ -36,7 +30,7 @@ function ProjectListItem({
       </figure>
 
       <section className="details">
-        <h4>{name}</h4>
+        <h4><Link to={`/projects/${id}`}>{name}</Link></h4>
         <p>{about}</p>
         {link ? (
           <p>
@@ -48,11 +42,12 @@ function ProjectListItem({
       <footer className="extra">
         <span className="badge blue">Phase {phase}</span>
         <div className="manage">
-          <button
-            onClick={handleEditClick}
+          <Link
+            className="button"
+            to={`/projects/${id}/edit`}
           >
             <FaPencilAlt />
-          </button>
+          </Link>
           <button
             onClick={handleDeleteClick}
           >

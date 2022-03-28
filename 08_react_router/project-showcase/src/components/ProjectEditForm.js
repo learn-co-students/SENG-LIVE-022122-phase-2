@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useParams, useHistory } from 'react-router-dom'
 
 function ProjectEditForm({ onUpdateProject }) {
   const [formState, setFormState] = useState({
@@ -10,7 +11,8 @@ function ProjectEditForm({ onUpdateProject }) {
   })
   const { name, about, phase, link, image } = formState;
 
-  const id = 1;
+  const { id } = useParams();
+  const history = useHistory();
   useEffect(() => {
     fetch(`http://localhost:4000/projects/${id}`)
       .then(res => res.json())
@@ -24,7 +26,9 @@ function ProjectEditForm({ onUpdateProject }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    onUpdateProject(id, JSON.stringify(formState))
+    onUpdateProject(id, JSON.stringify(formState)).then(() => {
+      history.push("/projects")
+    })
   }
   
   return (
