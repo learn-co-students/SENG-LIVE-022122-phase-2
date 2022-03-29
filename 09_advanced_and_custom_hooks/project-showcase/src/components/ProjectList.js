@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ProjectListItem from "./ProjectListItem";
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 function ProjectList({
   projects,
@@ -7,6 +8,7 @@ function ProjectList({
   onUpdateProject
 }) {
   const [searchText, setSearchText] = useState("");
+  useDocumentTitle("Projects")
 
   const searchResults = projects.filter(project => {
     return (

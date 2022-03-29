@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useForm } from "../hooks/useForm";
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 function ProjectForm({ onCreateProject }) {
   const nameInputRef = useRef(null);
@@ -11,6 +12,7 @@ function ProjectForm({ onCreateProject }) {
     image: ""
   }
   const { formState, handleChange } = useForm(initialFormState);
+  useDocumentTitle("New Project")
 
   useEffect(() => {
     nameInputRef.current.focus();

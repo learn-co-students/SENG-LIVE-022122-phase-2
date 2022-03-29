@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom';
 import { useForm } from '../hooks/useForm';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 function ProjectEditForm({ onUpdateProject }) {
   const {
@@ -18,11 +19,16 @@ function ProjectEditForm({ onUpdateProject }) {
 
   const { id } = useParams();
   const history = useHistory();
+  const [title, setTitle] = useState("Edit Project");
+  useDocumentTitle(title);
 
   useEffect(() => {
     fetch(`http://localhost:4000/projects/${id}`)
       .then(res => res.json())
-      .then(project => setFormState(project))
+      .then(project => {
+        setTitle(`Editing Project: ${project.name}`);
+        setFormState(project)
+      })
   }, [id, setFormState])
 
   function handleSubmit(event) {

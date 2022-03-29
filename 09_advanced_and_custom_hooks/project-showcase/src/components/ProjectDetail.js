@@ -15,7 +15,7 @@ function ProjectDetail() {
       .then((r) => r.json())
       .then((project) => {
         setProject(project); 
-        setDocumentTitle(`Project Details - ${project.name}`);
+        setDocumentTitle(`Project Details: ${project.name}`);
         setIsLoaded(true);
       });
   }, [id]);
