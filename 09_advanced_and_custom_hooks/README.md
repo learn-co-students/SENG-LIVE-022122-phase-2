@@ -14,7 +14,7 @@
 
 ## Agenda
 
-- Build features for project showcase
+- Build features with `useRef` and the `useDocumentTitle` and `useForm` custom hooks for project showcase
 - explore the useContext hook
 - do a bit of custom hooks workshop
 
