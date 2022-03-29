@@ -24,6 +24,7 @@
 - [React useRef guide](https://dmitripavlutin.com/react-useref-guide/)
 - [React docs on custom hooks](https://reactjs.org/docs/hooks-custom.html)
 - [React Hooks Lifecycle Diagram](https://res.cloudinary.com/dnocv6uwb/image/upload/v1646160177/68747470733a2f2f692e696d6775722e636f6d2f446862744a6a672e706e67_jagkht.png)
+- [Checkboxes in controlled from example](https://codesandbox.io/s/checkboxes-in-react-controlled-form-example-9yzl2p)
 - [React useContext hook tutorial (with examples of how Context.Consumer can be replaced by useContext)](https://daveceddia.com/usecontext-hook/)
 - [Egghead course on react context for state management](https://egghead.io/courses/react-context-for-state-management)
 - [Fabulous blog post series with visualization of React re-rendering](https://alexsidorenko.com/blog/react-render-always-rerenders/)
