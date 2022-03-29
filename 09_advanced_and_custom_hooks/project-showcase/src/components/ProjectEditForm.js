@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { useParams, useHistory } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom';
+import { useForm } from '../hooks/useForm';
 
 function ProjectEditForm({ onUpdateProject }) {
-  const [formState, setFormState] = useState({
+  const {
+    formState,
+    setFormState,
+    handleChange
+  } = useForm({
     name: "",
     about: "",
     phase: "",
@@ -18,12 +23,7 @@ function ProjectEditForm({ onUpdateProject }) {
     fetch(`http://localhost:4000/projects/${id}`)
       .then(res => res.json())
       .then(project => setFormState(project))
-  }, [id])
-
-  function handleChange(event) {
-    const { name, value } = event.target;
-    setFormState({...formState, [name]: value})
-  }
+  }, [id, setFormState])
 
   function handleSubmit(event) {
     event.preventDefault();

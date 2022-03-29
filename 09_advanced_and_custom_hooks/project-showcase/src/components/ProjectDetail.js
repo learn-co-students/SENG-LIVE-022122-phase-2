@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
 
 function ProjectDetail() {
   const [claps, setClaps] = useState(0);
   const [project, setProject] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-
+  const [documentTitle, setDocumentTitle] = useState("Project Details");
+  useDocumentTitle(documentTitle)
   const { id } = useParams();
   
   useEffect(() => {
     fetch(`http://localhost:4000/projects/${id}`)
       .then((r) => r.json())
       .then((project) => {
-        setProject(project);
+        setProject(project); 
+        setDocumentTitle(`Project Details - ${project.name}`);
         setIsLoaded(true);
       });
   }, [id]);
