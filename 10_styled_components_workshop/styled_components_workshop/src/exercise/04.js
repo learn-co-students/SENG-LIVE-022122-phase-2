@@ -27,9 +27,9 @@ export default function NavBar() {
   // they should still also have the href prop (since we want them to be links)
   return (
     <Wrapper>
-      <a href="#home">Home</a>
-      <a href="#login">Login</a>
-      <a href="#signup">Signup</a>
+      <Button as="a" href="#home">Home</Button>
+      <Button as="a" href="#login">Login</Button>
+      <Button as="a" href="#signup">Signup</Button>
       <Button>Logout</Button>
     </Wrapper>
   );
