@@ -1,3 +1,4 @@
+/*
 :root {
   --turquoise: #00efe1;
   --mid-turquoise: #14d5c9;
@@ -18,7 +19,7 @@
   --primary: var(--turquoise);
 }
 
-/* layout */
+// layout 
 * {
   padding: 0;
   margin: 0;
@@ -32,6 +33,7 @@ body {
   background-color: var(--background);
 }
 
+*/
 .App {
   color: var(--color);
   background-color: var(--background);
@@ -56,7 +58,7 @@ section {
   padding: 1.75rem;
 }
 
-/* buttons */
+/* buttons
 .button, button {
   padding: 0.5rem 0.75rem;
   border: none;
@@ -76,7 +78,6 @@ button.active,
 button:focus,
 button:hover {
   outline: none;
-  /* color: var(--white); */
   background-color: var(--blue);
   border: 2px solid var(--primary);
 }
@@ -98,32 +99,23 @@ button.blue:hover {
   color: var(--white);
   background-color: var(--blue);
   border: 2px solid var(--blue);
-}
+} */
 
 /* links */
-a {
-  color: var(--color);
-  border-bottom: 1px solid var(--color);
-  text-decoration: none;
-}
 
-a:hover {
-  background-color: var(--blue);
-  border-bottom: 1px solid var(--blue);
-}
 
 /* header */
-nav {
+/* nav {
   padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-content: center;
-}
+} */
 
-.navigation * {
+/* .navigation * {
   margin: 0 0.5rem;
-}
-
+} */
+/* 
 nav h1 a {
   border-bottom: none;
 }
@@ -131,17 +123,17 @@ nav h1 a {
 nav h1 a:hover {
   border-bottom: none;
   background-color: transparent;
-}
+} */
 
-.logo {
+/* .logo {
   color: var(--turquoise);
   font-size: 1.25em;
   font-family: Helvetica;
   margin-right: 0.5rem;
-}
+} */
 
 /* forms */
-.form {
+/* .form {
   display: flex;
   flex-direction: column;
   width: 500px;
@@ -172,15 +164,15 @@ textarea:focus,
 select:focus {
   outline: none;
   border: 2px solid var(--primary);
-}
+} */
 
-.form button[type="submit"] {
+/* .form button[type="submit"] {
   width: 50%;
   cursor: pointer;
-}
+} */
 
 /* Filter */
-.filter {
+/* .filter {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -189,26 +181,26 @@ select:focus {
 
 .filter button {
   margin: 0 1rem;
-}
+} */
 
-.project-image img {
+/* .project-image img {
   width: 100%;
   max-width: 1000px;
   display: block;
   margin-bottom: 2rem;
-}
+} */
 
 /* cards */
-.cards {
+/* .cards {
   margin: 0 auto;
   list-style: none;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1.5rem;
-}
+} */
 
-.card {
+/* .card {
   max-width: 400px;
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -220,9 +212,9 @@ select:focus {
     display: block;
     max-width: inherit;
   }
-}
+} */
 
-.card .image {
+/* .card .image {
   max-height: 200px;
   overflow: hidden;
   position: relative;
@@ -246,7 +238,7 @@ select:focus {
 .card .image .claps:hover {
   color: transparent;
   text-shadow: 0 0 0 var(--color);
-}
+} */
 
 .card .details {
   margin: 0.5rem;

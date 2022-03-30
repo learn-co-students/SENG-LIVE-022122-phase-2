@@ -1,6 +1,17 @@
 import React, { useState } from "react";
 import ProjectListItem from "./ProjectListItem";
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
+import { Button, Input, HorizontalButtonContainer, Box } from './shared';
+import styled from 'styled-components';
+
+const Cards = styled.ul`
+  margin: 0 auto;
+  list-style: none;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+`
 
 function ProjectList({
   projects,
@@ -32,25 +43,25 @@ function ProjectList({
   });
 
   return (
-    <section>
+    <Box p="2rem" d="flex" flexDirection="column" itemsCenter>
       <h2>Projects</h2>
 
-      <div className="filter">
-        <button>All</button>
-        <button>Phase 5</button>
-        <button>Phase 4</button>
-        <button>Phase 3</button>
-        <button>Phase 2</button>
-        <button>Phase 1</button>
-      </div>
-      <input
+      <HorizontalButtonContainer>
+        <Button>All</Button>
+        <Button>Phase 5</Button>
+        <Button>Phase 4</Button>
+        <Button>Phase 3</Button>
+        <Button>Phase 2</Button>
+        <Button>Phase 1</Button>
+      </HorizontalButtonContainer>
+      <Input
         type="text"
         placeholder="Search..."
         onChange={(e) => setSearchText(e.target.value)}
       />
 
-      <ul className="cards">{projectItems}</ul>
-    </section>
+      <Cards>{projectItems}</Cards>
+    </Box>
   );
 }
 

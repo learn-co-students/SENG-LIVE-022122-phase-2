@@ -1,7 +1,36 @@
 import React from "react";
 import { FaPencilAlt, FaTrash } from 'react-icons/fa';
 import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { Button, buttonBase, Card } from './shared';
 
+const EditLink = styled(Link)`
+${buttonBase}
+`
+
+const ProjectImage = styled.figure`
+  max-height: 200px;
+  overflow: hidden;
+  position: relative;
+  & img {
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+  }
+`
+
+const ClapButton = styled(Button)`
+  color: transparent;
+  text-shadow: 0 0 0 var(--turquoise);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  &:hover, &:focus {
+    color: transparent;
+    text-shadow: 0 0 0 var(--color);
+  }
+`
 
 function ProjectListItem({
   id,
@@ -25,11 +54,11 @@ function ProjectListItem({
     onDeleteProject(id);
   }
   return (
-    <li className="card">
-      <figure className="image">
+    <Card>
+      <ProjectImage>
         <img src={image} alt={name} />
-        <button onClick={handleClapClick} className="claps">👏{claps}</button>
-      </figure>
+        <ClapButton onClick={handleClapClick} className="claps">👏{claps}</ClapButton>
+      </ProjectImage>
 
       <section className="details">
         <h4><Link to={`/projects/${id}`}>{name}</Link></h4>
@@ -44,20 +73,20 @@ function ProjectListItem({
       <footer className="extra">
         <span className="badge blue">Phase {phase}</span>
         <div className="manage">
-          <Link
+          <EditLink
             className="button"
             to={`/projects/${id}/edit`}
           >
             <FaPencilAlt />
-          </Link>
-          <button
+          </EditLink>
+          <Button
             onClick={handleDeleteClick}
           >
             <FaTrash />
-          </button>
+          </Button>
         </div>
       </footer>
-    </li>
+    </Card>
   );
 }
 

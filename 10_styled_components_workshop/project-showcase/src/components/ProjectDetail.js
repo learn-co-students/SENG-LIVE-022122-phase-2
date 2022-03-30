@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
+import { Box } from './shared';
 
-function ProjectDetail() {
-  const [claps, setClaps] = useState(0);
+function ProjectDetail({ onUpdateProject }) {
   const [project, setProject] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [documentTitle, setDocumentTitle] = useState("Project Details");
@@ -25,7 +25,7 @@ function ProjectDetail() {
   const { image, name, about, link, phase } = project;
 
   function handleClapClick() {
-    setClaps(claps => claps + 1);
+    onUpdateProject(id, JSON.stringify({claps: project.claps + 1}))
   }
 
   return (
@@ -34,7 +34,7 @@ function ProjectDetail() {
         <div className="project-image">
           <img src={image} alt={name} />
           <button className="claps" onClick={handleClapClick}>
-            👏{claps}
+            👏{project.claps}
           </button>
         </div>
         <div className="details">

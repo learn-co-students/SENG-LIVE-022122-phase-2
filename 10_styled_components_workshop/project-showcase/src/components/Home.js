@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
+import { Box } from './shared';
 
 function Home() {
   const [recentProjects, setRecentProjects] = useState([]);
@@ -15,7 +16,7 @@ function Home() {
   }, []);
 
   return (
-    <section className="box">
+    <Box border p="1.75rem" mx="1.5rem">
       <h2 style={{ fontSize: "3rem" }}>View Awesome Projects.</h2>
       <p>
         Looking for someone to hire? Check out these awesome projects from
@@ -30,7 +31,7 @@ function Home() {
           View All Projects
         </a>
       </div>
-    </section>
+    </Box>
   );
 }
 
